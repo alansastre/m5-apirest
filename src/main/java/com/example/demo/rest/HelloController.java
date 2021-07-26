@@ -10,18 +10,24 @@ import org.springframework.web.bind.annotation.RestController;
 // @Controller // Spring MVC con redireccion a plantillas html dentro del proyecto
 // @Component // Anotacion generica para clases que no recaen en ninguna capa
 
-@RequestMapping("/api") // Enrutado HTTP
+// @RequestMapping("") // Enrutado HTTP
 @RestController
 public class HelloController {
 
 	
 	private final Logger log = LoggerFactory.getLogger(HelloController.class);
-			
+		
+	
+	@GetMapping("/")
+	public String index() {
+		return "API REST is at /api/....";
+	}
+	
 	/**
 	 * http://localhost:8080/api/hello
 	 * @return
 	 */
-	@GetMapping("/hello")
+	@GetMapping("/api/hello")
 	public String hello() {
 		log.info("Executing hello world method from logger");
 		// diferentes niveles de logger:
@@ -34,7 +40,7 @@ public class HelloController {
 	 * http://localhost:8080/api/hello
 	 * @return
 	 */
-	@GetMapping("/bye")
+	@GetMapping("/api/bye")
 	public String bye() {
 		log.info("Executing bye world method from logger");
 		// diferentes niveles de logger:
