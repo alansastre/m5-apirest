@@ -20,7 +20,20 @@ public class HelloController {
 	
 	@GetMapping("/")
 	public String index() {
-		return "API REST is at /api/....";
+		return """
+				<!DOCTYPE html>
+				<html>
+				<head>
+				<meta charset="ISO-8859-1">
+				<title>Awesome API REST</title>
+				</head>
+				<body>
+				<h1 style="color:red;">Bienvenido a la API extraterrestre</h1>
+				<a href="/api/cars">Cars Database</a>
+				
+				</body>
+				</html>
+				""";
 	}
 	
 	/**
@@ -48,6 +61,7 @@ public class HelloController {
 		// log.error("Executing hello world method from logger");
 		return "Adios mundo cruel";
 	}
+
 	
 	
 	
