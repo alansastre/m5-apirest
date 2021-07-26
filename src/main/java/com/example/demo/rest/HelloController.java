@@ -30,6 +30,19 @@ public class HelloController {
 		return "Hola mundo";
 	}
 	
+	/**
+	 * http://localhost:8080/api/hello
+	 * @return
+	 */
+	@GetMapping("/bye")
+	public String bye() {
+		log.info("Executing bye world method from logger");
+		// diferentes niveles de logger:
+		// log.warn("Executing hello world method from logger");
+		// log.error("Executing hello world method from logger");
+		return "Adios mundo cruel";
+	}
+	
 	
 	
 }
